@@ -33,7 +33,7 @@ namespace Library_Management
                 cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = txtEmail.Text;
                 cmd.Parameters.Add("@Semester", SqlDbType.NVarChar).Value = txtSemester.Text;
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Student Detail Created");
+                MessageBox.Show("Student Detail Added");
                 txtName.Text = "";
                 txtID.Text = "";
                 txtDepartment.Text = "";

@@ -33,9 +33,9 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblBookName = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txtBookName = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.lblReturnDate = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnReturn = new System.Windows.Forms.Button();
@@ -60,7 +60,6 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 27);
             this.txtSearch.TabIndex = 46;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
             // 
@@ -81,16 +80,17 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(770, 351);
             this.dataGridView1.TabIndex = 48;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
-            // lblBookName
+            // lblID
             // 
-            this.lblBookName.AutoSize = true;
-            this.lblBookName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookName.Location = new System.Drawing.Point(64, 463);
-            this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(115, 23);
-            this.lblBookName.TabIndex = 49;
-            this.lblBookName.Text = "Book Name";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(47, 464);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(134, 23);
+            this.lblID.TabIndex = 49;
+            this.lblID.Text = "Issue Book ID";
             // 
             // contextMenuStrip1
             // 
@@ -98,13 +98,14 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // txtBookName
+            // txtID
             // 
-            this.txtBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookName.Location = new System.Drawing.Point(19, 518);
-            this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(200, 27);
-            this.txtBookName.TabIndex = 51;
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(19, 518);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(200, 27);
+            this.txtID.TabIndex = 51;
             // 
             // lblReturnDate
             // 
@@ -133,6 +134,7 @@
             this.btnReturn.TabIndex = 54;
             this.btnReturn.Text = "Return Book";
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // ReturnBook
             // 
@@ -142,8 +144,8 @@
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblReturnDate);
-            this.Controls.Add(this.txtBookName);
-            this.Controls.Add(this.lblBookName);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSearchStudent);
             this.Controls.Add(this.txtSearch);
@@ -163,9 +165,9 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblBookName;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox txtBookName;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblReturnDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnReturn;

@@ -50,6 +50,7 @@
             // 
             // txtSemester
             // 
+            this.txtSemester.Enabled = false;
             this.txtSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSemester.Location = new System.Drawing.Point(606, 359);
             this.txtSemester.Name = "txtSemester";
@@ -58,6 +59,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(606, 280);
             this.txtEmail.Name = "txtEmail";
@@ -66,6 +68,7 @@
             // 
             // txtDepartment
             // 
+            this.txtDepartment.Enabled = false;
             this.txtDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDepartment.Location = new System.Drawing.Point(606, 197);
             this.txtDepartment.Name = "txtDepartment";
@@ -74,6 +77,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(606, 119);
             this.txtID.Name = "txtID";
@@ -122,6 +126,7 @@
             // 
             // txtName
             // 
+            this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(606, 53);
             this.txtName.Name = "txtName";
@@ -165,12 +170,13 @@
             this.btnSearchStudent.TabIndex = 44;
             this.btnSearchStudent.Text = "Search Student";
             this.btnSearchStudent.UseVisualStyleBackColor = true;
+            this.btnSearchStudent.Click += new System.EventHandler(this.btnSearchStudent_Click);
             // 
             // lblIssue
             // 
             this.lblIssue.AutoSize = true;
             this.lblIssue.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIssue.Location = new System.Drawing.Point(676, 505);
+            this.lblIssue.Location = new System.Drawing.Point(404, 511);
             this.lblIssue.Name = "lblIssue";
             this.lblIssue.Size = new System.Drawing.Size(105, 23);
             this.lblIssue.TabIndex = 45;
@@ -179,9 +185,9 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(801, 505);
+            this.dateTimePicker1.Location = new System.Drawing.Point(606, 505);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(303, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(514, 31);
             this.dateTimePicker1.TabIndex = 46;
             // 
             // btnIssue
@@ -193,6 +199,7 @@
             this.btnIssue.TabIndex = 47;
             this.btnIssue.Text = "Issue Book";
             this.btnIssue.UseVisualStyleBackColor = true;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
             // lblBookName
             // 
@@ -206,10 +213,12 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(606, 440);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(514, 24);
+            this.comboBox1.Size = new System.Drawing.Size(514, 28);
             this.comboBox1.TabIndex = 49;
             // 
             // IssueBook
@@ -238,6 +247,7 @@
             this.Name = "IssueBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IssueBook";
+            this.Load += new System.EventHandler(this.IssueBook_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

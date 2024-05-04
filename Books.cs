@@ -32,7 +32,7 @@ namespace Library_Management
                 cmd.Parameters.Add("@BookPrice", SqlDbType.NVarChar).Value = txtPrice.Text;
                 cmd.Parameters.Add("@Quantity", SqlDbType.NVarChar).Value = txtQuantity.Text;
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Book Created");
+                MessageBox.Show("Book Added");
                 conn.Close();
                 txtName.Text = "";
                 txtAuthor.Text = "";
