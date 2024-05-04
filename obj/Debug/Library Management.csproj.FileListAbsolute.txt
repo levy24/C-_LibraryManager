@@ -1,0 +1,18 @@
+E:\.NET\Library Management\bin\Debug\Library Management.exe.config
+E:\.NET\Library Management\bin\Debug\Library Management.exe
+E:\.NET\Library Management\bin\Debug\Library Management.pdb
+E:\.NET\Library Management\obj\Debug\Library Management.csproj.AssemblyReference.cache
+E:\.NET\Library Management\obj\Debug\Library Management.csproj.SuggestedBindingRedirects.cache
+E:\.NET\Library Management\obj\Debug\Library_Management.frmLogin.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.Properties.Resources.resources
+E:\.NET\Library Management\obj\Debug\Library Management.csproj.GenerateResource.cache
+E:\.NET\Library Management\obj\Debug\Library Management.csproj.CoreCompileInputs.cache
+E:\.NET\Library Management\obj\Debug\Library Management.exe
+E:\.NET\Library Management\obj\Debug\Library Management.pdb
+E:\.NET\Library Management\obj\Debug\Library_Management.Dashboard.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.Books.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.IssueBook.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.ReturnBook.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.Students.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.IssueBookReport.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.ReturnBookReport.resources
