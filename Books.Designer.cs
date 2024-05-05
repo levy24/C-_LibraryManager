@@ -190,6 +190,7 @@
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // BtnDelete
             // 
@@ -200,6 +201,7 @@
             this.BtnDelete.TabIndex = 16;
             this.BtnDelete.Text = "DELETE";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // dateTimePicker1
             // 

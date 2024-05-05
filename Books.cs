@@ -20,35 +20,42 @@ namespace Library_Management
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-EBTTMM8\\MAY1;Initial Catalog=library;Integrated Security=True");
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            if (txtName.Text != "" && txtAuthor.Text != "" && txtPublication.Text != "" && txtPrice.Text != "" && txtQuantity.Text != "")
+            try
             {
-                SqlCommand cmd = new SqlCommand("books_create", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = txtName.Text;
-                cmd.Parameters.Add("@AuthorName", SqlDbType.NVarChar).Value = txtAuthor.Text;
-                cmd.Parameters.Add("@publication", SqlDbType.NVarChar).Value = txtPublication.Text;
-                cmd.Parameters.Add("@purchaseDate", SqlDbType.NVarChar).Value = dateTimePicker1.Value;
-                cmd.Parameters.Add("@BookPrice", SqlDbType.NVarChar).Value = txtPrice.Text;
-                cmd.Parameters.Add("@Quantity", SqlDbType.NVarChar).Value = txtQuantity.Text;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Book Added");
+                conn.Open();
+                if (txtName.Text != "" && txtAuthor.Text != "" && txtPublication.Text != "" && txtPrice.Text != "" && txtQuantity.Text != "")
+                {
+                    SqlCommand cmd = new SqlCommand("books_create", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = txtName.Text;
+                    cmd.Parameters.Add("@AuthorName", SqlDbType.NVarChar).Value = txtAuthor.Text;
+                    cmd.Parameters.Add("@publication", SqlDbType.NVarChar).Value = txtPublication.Text;
+                    cmd.Parameters.Add("@purchaseDate", SqlDbType.NVarChar).Value = dateTimePicker1.Value;
+                    cmd.Parameters.Add("@BookPrice", SqlDbType.NVarChar).Value = txtPrice.Text;
+                    cmd.Parameters.Add("@Quantity", SqlDbType.NVarChar).Value = txtQuantity.Text;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Book Added");
+                    txtName.Text = "";
+                    txtAuthor.Text = "";
+                    txtPublication.Text = "";
+                    txtPrice.Text = "";
+                    txtQuantity.Text = "";
+
+                    Books_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in all fields before proceeding.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 conn.Close();
-                txtName.Text = "";
-                txtAuthor.Text = "";
-                txtPublication.Text = "";
-                txtPrice.Text = "";
-                txtQuantity.Text = "";
-
-                Books_Load(sender, e);
             }
-            else
-            {
-                MessageBox.Show("Please fill in all fields before proceeding.");
-            }
-            conn.Close();
-
-            Books_Load(sender, e);
         }
 
         private void Books_Load(object sender, EventArgs e)
@@ -57,7 +64,7 @@ namespace Library_Management
             SqlCommand cmd = new SqlCommand("books_view", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = "";
-            SqlDataAdapter da = new SqlDataAdapter(cmd);   
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView2.DataSource = dt;
@@ -76,5 +83,74 @@ namespace Library_Management
             dataGridView2.DataSource = dt;
             conn.Close();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            if (txtName.Text != "" && txtAuthor.Text != "" && txtPublication.Text != "" && txtPrice.Text != "" && txtQuantity.Text != "")
+            {
+                SqlCommand cmd = new SqlCommand("books_update", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = txtName.Text;
+                cmd.Parameters.Add("@AuthorName", SqlDbType.NVarChar).Value = txtAuthor.Text;
+                cmd.Parameters.Add("@publication", SqlDbType.NVarChar).Value = txtPublication.Text;
+                cmd.Parameters.Add("@purchaseDate", SqlDbType.NVarChar).Value = dateTimePicker1.Value;
+                cmd.Parameters.Add("@BookPrice", SqlDbType.NVarChar).Value = txtPrice.Text;
+                cmd.Parameters.Add("@Quantity", SqlDbType.NVarChar).Value = txtQuantity.Text;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Book Updated");
+                conn.Close();
+                txtName.Text = "";
+                txtAuthor.Text = "";
+                txtPublication.Text = "";
+                txtPrice.Text = "";
+                txtQuantity.Text = "";
+
+                Books_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all fields before proceeding.");
+            }
+            conn.Close();
+
+            Books_Load(sender, e);
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtAuthor.Text))
+            {
+                MessageBox.Show("Please enter both book name and author name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this book?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("books_delete", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = txtName.Text;
+                    cmd.Parameters.Add("@AuthorName", SqlDbType.NVarChar).Value = txtAuthor.Text;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView2.DataSource = dt;
+                    conn.Close();
+                    txtName.Text = "";
+                    txtAuthor.Text = "";
+                    Books_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
 }
