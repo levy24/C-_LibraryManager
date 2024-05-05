@@ -46,6 +46,9 @@
             this.BtnDelete = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +77,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(39, 342);
+            this.lblName.Location = new System.Drawing.Point(39, 414);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(115, 23);
             this.lblName.TabIndex = 2;
@@ -83,7 +86,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(218, 339);
+            this.txtName.Location = new System.Drawing.Point(240, 410);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(514, 27);
             this.txtName.TabIndex = 3;
@@ -92,7 +95,7 @@
             // 
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.Location = new System.Drawing.Point(39, 394);
+            this.lblAuthor.Location = new System.Drawing.Point(39, 470);
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(132, 23);
             this.lblAuthor.TabIndex = 4;
@@ -102,7 +105,7 @@
             // 
             this.lblPublication.AutoSize = true;
             this.lblPublication.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPublication.Location = new System.Drawing.Point(39, 453);
+            this.lblPublication.Location = new System.Drawing.Point(39, 518);
             this.lblPublication.Name = "lblPublication";
             this.lblPublication.Size = new System.Drawing.Size(114, 23);
             this.lblPublication.TabIndex = 5;
@@ -112,7 +115,7 @@
             // 
             this.lblPurchase.AutoSize = true;
             this.lblPurchase.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurchase.Location = new System.Drawing.Point(39, 514);
+            this.lblPurchase.Location = new System.Drawing.Point(39, 569);
             this.lblPurchase.Name = "lblPurchase";
             this.lblPurchase.Size = new System.Drawing.Size(142, 23);
             this.lblPurchase.TabIndex = 6;
@@ -122,7 +125,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(39, 573);
+            this.lblPrice.Location = new System.Drawing.Point(39, 620);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(108, 23);
             this.lblPrice.TabIndex = 7;
@@ -132,7 +135,7 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(39, 630);
+            this.lblQuantity.Location = new System.Drawing.Point(39, 675);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(141, 23);
             this.lblQuantity.TabIndex = 8;
@@ -141,7 +144,7 @@
             // txtAuthor
             // 
             this.txtAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAuthor.Location = new System.Drawing.Point(218, 397);
+            this.txtAuthor.Location = new System.Drawing.Point(240, 456);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(514, 27);
             this.txtAuthor.TabIndex = 9;
@@ -149,7 +152,7 @@
             // txtPublication
             // 
             this.txtPublication.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublication.Location = new System.Drawing.Point(218, 456);
+            this.txtPublication.Location = new System.Drawing.Point(240, 514);
             this.txtPublication.Name = "txtPublication";
             this.txtPublication.Size = new System.Drawing.Size(514, 27);
             this.txtPublication.TabIndex = 10;
@@ -157,7 +160,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(218, 573);
+            this.txtPrice.Location = new System.Drawing.Point(240, 616);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(514, 27);
             this.txtPrice.TabIndex = 12;
@@ -165,7 +168,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(218, 633);
+            this.txtQuantity.Location = new System.Drawing.Point(240, 671);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(514, 27);
             this.txtQuantity.TabIndex = 13;
@@ -173,9 +176,9 @@
             // btnCreate
             // 
             this.btnCreate.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(845, 342);
+            this.btnCreate.Location = new System.Drawing.Point(833, 425);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(222, 75);
+            this.btnCreate.Size = new System.Drawing.Size(222, 58);
             this.btnCreate.TabIndex = 14;
             this.btnCreate.Text = "CREATE";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -184,9 +187,9 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(845, 514);
+            this.btnUpdate.Location = new System.Drawing.Point(833, 567);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(222, 71);
+            this.btnUpdate.Size = new System.Drawing.Size(222, 58);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -195,9 +198,9 @@
             // BtnDelete
             // 
             this.BtnDelete.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDelete.Location = new System.Drawing.Point(845, 596);
+            this.BtnDelete.Location = new System.Drawing.Point(833, 639);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(222, 75);
+            this.BtnDelete.Size = new System.Drawing.Size(222, 59);
             this.BtnDelete.TabIndex = 16;
             this.BtnDelete.Text = "DELETE";
             this.BtnDelete.UseVisualStyleBackColor = true;
@@ -206,7 +209,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(218, 515);
+            this.dateTimePicker1.Location = new System.Drawing.Point(240, 567);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(514, 27);
             this.dateTimePicker1.TabIndex = 17;
@@ -214,19 +217,52 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(845, 428);
+            this.btnSearch.Location = new System.Drawing.Point(833, 493);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(222, 75);
+            this.btnSearch.Size = new System.Drawing.Size(222, 61);
             this.btnSearch.TabIndex = 18;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnRead_Click);
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(39, 360);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(82, 23);
+            this.lblID.TabIndex = 19;
+            this.lblID.Text = "Book ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(240, 360);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(514, 27);
+            this.txtID.TabIndex = 20;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(833, 360);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(222, 58);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 693);
+            this.ClientSize = new System.Drawing.Size(1138, 723);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.BtnDelete);
@@ -277,5 +313,8 @@
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Button btnClear;
     }
 }

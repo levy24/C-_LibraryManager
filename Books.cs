@@ -40,8 +40,6 @@ namespace Library_Management
                     txtPublication.Text = "";
                     txtPrice.Text = "";
                     txtQuantity.Text = "";
-
-                    Books_Load(sender, e);
                 }
                 else
                 {
@@ -56,6 +54,7 @@ namespace Library_Management
             {
                 conn.Close();
             }
+            Books_Load(sender, e);
         }
 
         private void Books_Load(object sender, EventArgs e)
@@ -68,6 +67,21 @@ namespace Library_Management
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView2.DataSource = dt;
+            //conn.Close();
+            txtID.DataBindings.Clear();
+            txtID.DataBindings.Add("Text", dataGridView2.DataSource, "BookID");
+            txtName.DataBindings.Clear();
+            txtName.DataBindings.Add("Text", dataGridView2.DataSource, "BookName");
+            txtAuthor.DataBindings.Clear();
+            txtAuthor.DataBindings.Add("Text", dataGridView2.DataSource, "AuthorName");
+            txtPublication.DataBindings.Clear();
+            txtPublication.DataBindings.Add("Text", dataGridView2.DataSource, "publication");
+            dateTimePicker1.DataBindings.Clear();
+            dateTimePicker1.DataBindings.Add("Text", dataGridView2.DataSource, "purchaseDate");
+            txtPrice.DataBindings.Clear();
+            txtPrice.DataBindings.Add("Text", dataGridView2.DataSource, "BookPrice");
+            txtQuantity.DataBindings.Clear();
+            txtQuantity.DataBindings.Add("Text", dataGridView2.DataSource, "Quantity");
             conn.Close();
         }
 
@@ -105,16 +119,14 @@ namespace Library_Management
                 txtPublication.Text = "";
                 txtPrice.Text = "";
                 txtQuantity.Text = "";
-
-                Books_Load(sender, e);
             }
             else
             {
                 MessageBox.Show("Please fill in all fields before proceeding.");
             }
             conn.Close();
-
             Books_Load(sender, e);
+
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -134,15 +146,12 @@ namespace Library_Management
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("books_delete", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = txtName.Text;
-                    cmd.Parameters.Add("@AuthorName", SqlDbType.NVarChar).Value = txtAuthor.Text;
+                    cmd.Parameters.Add("@BookID", SqlDbType.NVarChar).Value = txtID.Text;
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dataGridView2.DataSource = dt;
                     conn.Close();
-                    txtName.Text = "";
-                    txtAuthor.Text = "";
                     Books_Load(sender, e);
                 }
                 catch (Exception ex)
@@ -152,5 +161,14 @@ namespace Library_Management
             }
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "";
+            txtName.Text = "";
+            txtAuthor.Text = "";
+            txtPublication.Text = "";
+            txtPrice.Text = "";
+            txtQuantity.Text = "";
+        }
     }
 }
