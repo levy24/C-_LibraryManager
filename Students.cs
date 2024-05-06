@@ -70,6 +70,18 @@ namespace Library_Management
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView2.DataSource = dt;
+            txtID.DataBindings.Clear();
+            txtID.DataBindings.Add("Text", dataGridView2.DataSource, "ID");
+            txtName.DataBindings.Clear();
+            txtName.DataBindings.Add("Text", dataGridView2.DataSource, "Student_Name");
+            txtDepartment.DataBindings.Clear();
+            txtDepartment.DataBindings.Add("Text", dataGridView2.DataSource, "Department");
+            txtContact.DataBindings.Clear();
+            txtContact.DataBindings.Add("Text", dataGridView2.DataSource, "contact");
+            txtEmail.DataBindings.Clear();
+            txtEmail.DataBindings.Add("Text", dataGridView2.DataSource, "Email");
+            txtSemester.DataBindings.Clear();
+            txtSemester.DataBindings.Add("Text", dataGridView2.DataSource, "Semester");
             conn.Close();
         }
 
@@ -170,5 +182,14 @@ namespace Library_Management
             }
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+            txtID.Text = "";
+            txtDepartment.Text = "";
+            txtContact.Text = "";
+            txtEmail.Text = "";
+            txtSemester.Text = "";
+        }
     }
 }

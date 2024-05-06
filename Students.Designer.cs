@@ -46,6 +46,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblContact = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +54,9 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(863, 432);
+            this.btnSearch.Location = new System.Drawing.Point(863, 490);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(222, 75);
+            this.btnSearch.Size = new System.Drawing.Size(222, 51);
             this.btnSearch.TabIndex = 36;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -64,9 +65,9 @@
             // BtnDelete
             // 
             this.BtnDelete.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDelete.Location = new System.Drawing.Point(863, 600);
+            this.BtnDelete.Location = new System.Drawing.Point(863, 622);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(222, 75);
+            this.BtnDelete.Size = new System.Drawing.Size(222, 53);
             this.BtnDelete.TabIndex = 34;
             this.BtnDelete.Text = "DELETE";
             this.BtnDelete.UseVisualStyleBackColor = true;
@@ -75,9 +76,9 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(863, 518);
+            this.btnUpdate.Location = new System.Drawing.Point(863, 556);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(222, 71);
+            this.btnUpdate.Size = new System.Drawing.Size(222, 55);
             this.btnUpdate.TabIndex = 33;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -86,9 +87,9 @@
             // btnCreate
             // 
             this.btnCreate.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(863, 346);
+            this.btnCreate.Location = new System.Drawing.Point(863, 415);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(222, 75);
+            this.btnCreate.Size = new System.Drawing.Size(222, 55);
             this.btnCreate.TabIndex = 32;
             this.btnCreate.Text = "CREATE";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -222,11 +223,23 @@
             this.txtContact.Size = new System.Drawing.Size(514, 27);
             this.txtContact.TabIndex = 38;
             // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(863, 346);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(222, 55);
+            this.btnClear.TabIndex = 39;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 692);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtContact);
             this.Controls.Add(this.lblContact);
             this.Controls.Add(this.btnSearch);
@@ -277,5 +290,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.Button btnClear;
     }
 }
