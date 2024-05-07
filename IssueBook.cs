@@ -24,10 +24,11 @@ namespace Library_Management
             conn.Open();
             SqlCommand cmd = new SqlCommand("getBooks", conn);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = txtSearchBook.Text;
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                comboBox1.Items.Add(reader[0].ToString());
+                cbBookName.Items.Add(reader[0].ToString());
             }
             reader.Close();
             conn.Close();
@@ -38,15 +39,14 @@ namespace Library_Management
             conn.Open();
             SqlCommand cmd = new SqlCommand("students_view", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@ID", SqlDbType.NVarChar).Value = txtSearch.Text;
+            cmd.Parameters.Add("@ID", SqlDbType.NVarChar).Value = txtSearchStudent.Text;
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                txtName.Text = reader[0].ToString();
-                txtID.Text = reader[1].ToString();    
-                txtDepartment.Text = reader[2].ToString();
-                txtEmail.Text = reader[3].ToString();
-                txtSemester.Text = reader[4].ToString();
+                txtName.Text = reader["Student_Name"].ToString();
+                txtDepartment.Text = reader["Department"].ToString();
+                txtEmail.Text = reader["Email"].ToString();
+                txtSemester.Text = reader["Semester"].ToString();
             }
             reader.Close();
             conn.Close();
@@ -55,23 +55,27 @@ namespace Library_Management
         private void btnIssue_Click(object sender, EventArgs e)
         {
             conn.Open();
-            if (txtSearch.Text != "" && comboBox1.Text != "")
+            if (txtSearchStudent.Text != "" && cbBookName.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("issueBook_add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@StudentID", SqlDbType.NVarChar).Value = txtSearch.Text;
-                cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = comboBox1.Text;
+                cmd.Parameters.Add("@StudentID", SqlDbType.NVarChar).Value = txtSearchStudent.Text;
+                cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = cbBookName.Text;
                 cmd.Parameters.Add("@IssueDate", SqlDbType.NVarChar).Value = dateTimePicker1.Value.ToShortDateString();
                 cmd.Parameters.Add("@ReturnDate", SqlDbType.NVarChar).Value = "";
+                cmd.Parameters.Add("@BookID", SqlDbType.Int).Value = txtBookID.Text;
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Issue Book Added");
                 conn.Close();
-                txtSearch.Text = "";
+                txtSearchStudent.Text = "";
                 txtName.Text = "";
-                txtID.Text = "";
                 txtEmail.Text = "";
                 txtDepartment.Text = "";
                 txtSemester.Text = "";
+                txtSearchBook.Text = "";
+                txtAuthor.Text = "";
+                txtQuantity.Text = "";
+                cbBookName.Text = "";
 
             }
             else
@@ -79,6 +83,43 @@ namespace Library_Management
                 MessageBox.Show("Please fill in all fields before proceeding.");
             }
             conn.Close();
+        }
+
+        private void btnSearchBook_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("books_view", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = txtSearchBook.Text;
+            cbBookName.Items.Clear();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                cbBookName.Items.Add(reader["BookName"].ToString());
+            }
+            reader.Close();
+            conn.Close();
+        }
+
+        private void cbBookName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbBookName.SelectedIndex != -1)
+            {
+                string selectedBookName = cbBookName.SelectedItem.ToString();
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("books_view", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = selectedBookName;
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) 
+                {
+                    txtBookID.Text = reader["BookID"].ToString();
+                    txtAuthor.Text = reader["AuthorName"].ToString();
+                    txtQuantity.Text = reader["Quantity"].ToString();
+                }
+                reader.Close();
+                conn.Close();
+            }
         }
     }
 }
