@@ -57,31 +57,37 @@ namespace Library_Management
             conn.Open();
             if (txtSearchStudent.Text != "" && cbBookName.Text != "")
             {
-                SqlCommand cmd = new SqlCommand("issueBook_add", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@StudentID", SqlDbType.NVarChar).Value = txtSearchStudent.Text;
-                cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = cbBookName.Text;
-                cmd.Parameters.Add("@IssueDate", SqlDbType.NVarChar).Value = dateTimePicker1.Value.ToShortDateString();
-                cmd.Parameters.Add("@ReturnDate", SqlDbType.NVarChar).Value = "";
-                cmd.Parameters.Add("@BookID", SqlDbType.Int).Value = txtBookID.Text;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Issue Book Added");
-                conn.Close();
-                txtSearchStudent.Text = "";
-                txtName.Text = "";
-                txtEmail.Text = "";
-                txtDepartment.Text = "";
-                txtSemester.Text = "";
-                txtSearchBook.Text = "";
-                txtAuthor.Text = "";
-                txtQuantity.Text = "";
-                cbBookName.Text = "";
-
+                int currentQuantity = int.Parse(txtQuantity.Text);
+                if(currentQuantity > 0)
+                {
+                    SqlCommand updatecmd = new SqlCommand("UPDATE Books SET Quantity = Quantity - 1 WHERE BookID = @BookID", conn);
+                    updatecmd.Parameters.Add("@BookID", SqlDbType.Int).Value = txtBookID.Text;
+                    updatecmd.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand("issueBook_add", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@StudentID", SqlDbType.NVarChar).Value = txtSearchStudent.Text;
+                    cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = cbBookName.Text;
+                    cmd.Parameters.Add("@IssueDate", SqlDbType.NVarChar).Value = dateTimePicker1.Value.ToShortDateString();
+                    cmd.Parameters.Add("@ReturnDate", SqlDbType.NVarChar).Value = "";
+                    cmd.Parameters.Add("@BookID", SqlDbType.Int).Value = txtBookID.Text;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Issue Book Added");
+                    txtSearchStudent.Text = "";
+                    txtName.Text = "";
+                    txtEmail.Text = "";
+                    txtDepartment.Text = "";
+                    txtSemester.Text = "";
+                    txtSearchBook.Text = "";
+                    txtAuthor.Text = "";
+                    txtQuantity.Text = "";
+                    cbBookName.Text = "";
+                    txtBookID.Text = "";
+                }
+                else
+                    MessageBox.Show("There are no available copies of this book to borrow.");
             }
             else
-            {
                 MessageBox.Show("Please fill in all fields before proceeding.");
-            }
             conn.Close();
         }
 

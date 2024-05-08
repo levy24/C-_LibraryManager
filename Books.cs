@@ -111,6 +111,7 @@ namespace Library_Management
                 cmd.Parameters.Add("@purchaseDate", SqlDbType.NVarChar).Value = dateTimePicker1.Value;
                 cmd.Parameters.Add("@BookPrice", SqlDbType.NVarChar).Value = txtPrice.Text;
                 cmd.Parameters.Add("@Quantity", SqlDbType.NVarChar).Value = txtQuantity.Text;
+                cmd.Parameters.Add("@BookID", SqlDbType.NVarChar).Value = txtID.Text;
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Book Updated");
                 conn.Close();

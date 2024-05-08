@@ -48,10 +48,26 @@ namespace Library_Management
             conn.Open();
             SqlCommand cmd = new SqlCommand("issueBook_update", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@ID", SqlDbType.NVarChar).Value = txtID.Text;
+            cmd.Parameters.Add("@IssueID", SqlDbType.Int).Value = int.Parse(txtID.Text);
             cmd.Parameters.Add("@returnDate", SqlDbType.NVarChar).Value = dateTimePicker1.Value.ToShortDateString();
             cmd.ExecuteNonQuery();
             MessageBox.Show("Book Returned");
+
+            //string studentID = "";
+            //SqlCommand getStudentIDCmd = new SqlCommand("SELECT StudentID FROM issueBook WHERE IssueID = @IssueID", conn);
+            //getStudentIDCmd.Parameters.Add("@IssueID", SqlDbType.NVarChar).Value = txtID.Text;
+            //using (SqlDataReader reader = getStudentIDCmd.ExecuteReader())
+            //{
+            //    if (reader.Read())
+            //    {
+            //        studentID = reader["StudentID"].ToString();
+            //    }
+            //}
+
+            SqlCommand updateQuantityCmd = new SqlCommand("UPDATE Books SET Quantity = Quantity + 1 WHERE BookID IN (SELECT BookID FROM issueBook WHERE IssueID = @IssueID)", conn);
+            updateQuantityCmd.Parameters.Add("@IssueID", SqlDbType.Int).Value = int.Parse(txtID.Text);
+            updateQuantityCmd.ExecuteNonQuery();
+
             conn.Close();
         }
     }
