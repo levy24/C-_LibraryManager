@@ -90,6 +90,12 @@
     <Compile Include="ReturnBookReport.Designer.cs">
       <DependentUpon>ReturnBookReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="studentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentDashboard.Designer.cs">
+      <DependentUpon>studentDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Students.cs">
       <SubType>Form</SubType>
     </Compile>

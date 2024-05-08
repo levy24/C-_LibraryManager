@@ -36,6 +36,12 @@ namespace Library_Management
                     cmd.Parameters.Add("@Semester", SqlDbType.NVarChar).Value = txtSemester.Text;
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Student Detail Added");
+
+                    SqlCommand cmdLogin = new SqlCommand("user_add", conn);
+                    cmdLogin.CommandType = CommandType.StoredProcedure;
+                    cmdLogin.Parameters.Add("@username", SqlDbType.NVarChar).Value=txtName.Text;
+                    cmdLogin.Parameters.Add("password", SqlDbType.NVarChar).Value = txtID.Text;
+                    cmdLogin.ExecuteNonQuery();
                     txtName.Text = "";
                     txtID.Text = "";
                     txtDepartment.Text = "";

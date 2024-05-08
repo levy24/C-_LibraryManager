@@ -29,10 +29,21 @@ namespace Library_Management
             SqlDataReader rdr = cmd.ExecuteReader();
             if (rdr.Read())
             {
-                //MessageBox.Show("Login Success", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Dashboard dashboard = new Dashboard();
-                this.Hide();
-                dashboard.Show();
+               string permisson = rdr["permisson"].ToString();
+                if(permisson == "admin")
+                {
+                    //MessageBox.Show("Login Success", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Dashboard dashboard = new Dashboard();
+                    this.Hide();
+                    dashboard.Show();
+                }
+                else if(permisson == "student")
+                {
+                    //MessageBox.Show("Login Success", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    studentDashboard dashboard = new studentDashboard();
+                    this.Hide();
+                    dashboard.Show();
+                }
             }
             else
             {
