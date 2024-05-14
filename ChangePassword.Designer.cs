@@ -35,12 +35,13 @@
             this.lblNew = new System.Windows.Forms.Label();
             this.lblConfirm = new System.Windows.Forms.Label();
             this.btnChange = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCurrentPassword
             // 
             this.txtCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurrentPassword.Location = new System.Drawing.Point(395, 137);
+            this.txtCurrentPassword.Location = new System.Drawing.Point(395, 122);
             this.txtCurrentPassword.Name = "txtCurrentPassword";
             this.txtCurrentPassword.PasswordChar = '*';
             this.txtCurrentPassword.Size = new System.Drawing.Size(398, 27);
@@ -49,7 +50,7 @@
             // txtNewPassword
             // 
             this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(395, 215);
+            this.txtNewPassword.Location = new System.Drawing.Point(395, 187);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(398, 27);
@@ -58,7 +59,7 @@
             // txtConfirmNewPassword
             // 
             this.txtConfirmNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmNewPassword.Location = new System.Drawing.Point(395, 286);
+            this.txtConfirmNewPassword.Location = new System.Drawing.Point(395, 314);
             this.txtConfirmNewPassword.Name = "txtConfirmNewPassword";
             this.txtConfirmNewPassword.PasswordChar = '*';
             this.txtConfirmNewPassword.Size = new System.Drawing.Size(398, 27);
@@ -68,7 +69,7 @@
             // 
             this.lblCurrent.AutoSize = true;
             this.lblCurrent.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrent.Location = new System.Drawing.Point(73, 141);
+            this.lblCurrent.Location = new System.Drawing.Point(73, 122);
             this.lblCurrent.Name = "lblCurrent";
             this.lblCurrent.Size = new System.Drawing.Size(174, 23);
             this.lblCurrent.TabIndex = 24;
@@ -78,7 +79,7 @@
             // 
             this.lblNew.AutoSize = true;
             this.lblNew.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNew.Location = new System.Drawing.Point(73, 215);
+            this.lblNew.Location = new System.Drawing.Point(73, 191);
             this.lblNew.Name = "lblNew";
             this.lblNew.Size = new System.Drawing.Size(144, 23);
             this.lblNew.TabIndex = 25;
@@ -88,7 +89,7 @@
             // 
             this.lblConfirm.AutoSize = true;
             this.lblConfirm.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirm.Location = new System.Drawing.Point(73, 290);
+            this.lblConfirm.Location = new System.Drawing.Point(73, 318);
             this.lblConfirm.Name = "lblConfirm";
             this.lblConfirm.Size = new System.Drawing.Size(222, 23);
             this.lblConfirm.TabIndex = 26;
@@ -106,11 +107,22 @@
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(392, 242);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(367, 42);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "The new password must be longer than 7 and \r\ncontain special characters";
+            // 
             // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 490);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.lblConfirm);
             this.Controls.Add(this.lblNew);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Label lblNew;
         private System.Windows.Forms.Label lblConfirm;
         private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Label label1;
     }
 }
