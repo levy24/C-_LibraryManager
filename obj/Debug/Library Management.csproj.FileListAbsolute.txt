@@ -16,3 +16,7 @@ E:\.NET\Library Management\obj\Debug\Library_Management.ReturnBook.resources
 E:\.NET\Library Management\obj\Debug\Library_Management.Students.resources
 E:\.NET\Library Management\obj\Debug\Library_Management.IssueBookReport.resources
 E:\.NET\Library Management\obj\Debug\Library_Management.ReturnBookReport.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.studentDashboard.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.viewBook.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.StudentIssueBook.resources
+E:\.NET\Library Management\obj\Debug\Library_Management.ChangePassword.resources

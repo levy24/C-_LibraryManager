@@ -13,12 +13,15 @@ namespace Library_Management
 {
     public partial class frmLogin : Form
     {
+        private static string loggedInUsername;
+
         public frmLogin()
         {
             InitializeComponent();
         }
 
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-EBTTMM8\\MAY1;Initial Catalog=library;Integrated Security=True");
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -29,6 +32,7 @@ namespace Library_Management
             SqlDataReader rdr = cmd.ExecuteReader();
             if (rdr.Read())
             {
+
                string permisson = rdr["permisson"].ToString();
                 if(permisson == "admin")
                 {
@@ -39,6 +43,7 @@ namespace Library_Management
                 }
                 else if(permisson == "student")
                 {
+                    loggedInUsername = rdr["username"].ToString();
                     //MessageBox.Show("Login Success", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     studentDashboard dashboard = new studentDashboard();
                     this.Hide();
@@ -51,5 +56,10 @@ namespace Library_Management
             }
             conn.Close();
         }
+        public static string GetLoggedInUsername()
+        {
+            return loggedInUsername;
+        }
     }
+    
 }

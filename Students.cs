@@ -39,7 +39,7 @@ namespace Library_Management
 
                     SqlCommand cmdLogin = new SqlCommand("user_add", conn);
                     cmdLogin.CommandType = CommandType.StoredProcedure;
-                    cmdLogin.Parameters.Add("@username", SqlDbType.NVarChar).Value=txtName.Text;
+                    cmdLogin.Parameters.Add("@username", SqlDbType.NVarChar).Value=txtID.Text;
                     cmdLogin.Parameters.Add("password", SqlDbType.NVarChar).Value = txtID.Text;
                     cmdLogin.ExecuteNonQuery();
                     txtName.Text = "";

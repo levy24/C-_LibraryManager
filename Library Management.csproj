@@ -52,6 +52,12 @@
     <Compile Include="Books.Designer.cs">
       <DependentUpon>Books.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,14 +102,29 @@
     <Compile Include="studentDashboard.Designer.cs">
       <DependentUpon>studentDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentIssueBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentIssueBook.Designer.cs">
+      <DependentUpon>StudentIssueBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Students.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewBook.Designer.cs">
+      <DependentUpon>viewBook.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Books.resx">
       <DependentUpon>Books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -133,8 +154,17 @@
     <EmbeddedResource Include="ReturnBookReport.resx">
       <DependentUpon>ReturnBookReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="studentDashboard.resx">
+      <DependentUpon>studentDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentIssueBook.resx">
+      <DependentUpon>StudentIssueBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Students.resx">
       <DependentUpon>Students.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewBook.resx">
+      <DependentUpon>viewBook.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
