@@ -37,17 +37,17 @@ namespace Library_Management
                 if(permisson == "admin")
                 {
                     //MessageBox.Show("Login Success", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Dashboard dashboard = new Dashboard();
+                    Books book = new Books();
                     this.Hide();
-                    dashboard.Show();
+                    book.Show();
                 }
                 else if(permisson == "student")
                 {
                     loggedInUsername = rdr["username"].ToString();
                     //MessageBox.Show("Login Success", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    studentDashboard dashboard = new studentDashboard();
+                    viewBook viewBook = new viewBook();
                     this.Hide();
-                    dashboard.Show();
+                    viewBook.Show();
                 }
             }
             else
@@ -60,6 +60,7 @@ namespace Library_Management
         {
             return loggedInUsername;
         }
+
     }
     
 }

@@ -197,5 +197,51 @@ namespace Library_Management
             txtEmail.Text = "";
             txtSemester.Text = "";
         }
+
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+            Books book = new Books();
+            book.Show();
+            this.Hide();
+        }
+
+        private void btnIssue_Click(object sender, EventArgs e)
+        {
+            IssueBook issueBook = new IssueBook();
+            issueBook.Show();
+            this.Hide();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            ReturnBook returnBook = new ReturnBook();
+            returnBook.Show();
+            this.Hide();
+        }
+
+        private void btnIssueReport_Click(object sender, EventArgs e)
+        {
+            IssueBookReport issueBookReport = new IssueBookReport();
+            issueBookReport.Show();
+            this.Hide();
+        }
+
+        private void btnReturnReport_Click(object sender, EventArgs e)
+        {
+            ReturnBookReport returnBookReport = new ReturnBookReport();
+            returnBookReport.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+       
     }
 }

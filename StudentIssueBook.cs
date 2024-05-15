@@ -27,13 +27,35 @@ namespace Library_Management
             SqlCommand cmd = new SqlCommand("studentsIssueReport", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             frmLogin loginForm = new frmLogin();
-            MessageBox.Show(loggedInUsername, "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
             cmd.Parameters.Add("@studentID", SqlDbType.NVarChar).Value = loggedInUsername;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             conn.Close();   
+        }
+
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+            viewBook book = new viewBook();
+            book.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            ChangePassword change = new ChangePassword(frmLogin.GetLoggedInUsername());
+            change.Show();
+            this.Hide();
         }
     }
 }

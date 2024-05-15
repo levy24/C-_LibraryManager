@@ -182,5 +182,14 @@
   <ItemGroup>
     <None Include="Resources\thiet-ke-ke-thu-vien.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stack-of-books-great-education %28FILEminimizer%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOOK1.gif.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

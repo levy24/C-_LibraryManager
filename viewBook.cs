@@ -46,5 +46,28 @@ namespace Library_Management
             dataGridView1.DataSource = dt;
             conn.Close();
         }
+
+        private void btnIssue_Click(object sender, EventArgs e)
+        {
+            StudentIssueBook issueBook = new StudentIssueBook(frmLogin.GetLoggedInUsername());
+            issueBook.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            ChangePassword change = new ChangePassword(frmLogin.GetLoggedInUsername());
+            change.Show();
+            this.Hide();
+        }
     }
 }
