@@ -40,6 +40,8 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnBooks = new System.Windows.Forms.Button();
+            this.lblBorrowedCount = new System.Windows.Forms.Label();
+            this.txtBorrowedCount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +124,7 @@
             // 
             // btnIssueReport
             // 
+            this.btnIssueReport.BackColor = System.Drawing.Color.Teal;
             this.btnIssueReport.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssueReport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIssueReport.Location = new System.Drawing.Point(25, 400);
@@ -129,7 +132,7 @@
             this.btnIssueReport.Size = new System.Drawing.Size(286, 71);
             this.btnIssueReport.TabIndex = 33;
             this.btnIssueReport.Text = "Issue Book Report";
-            this.btnIssueReport.UseVisualStyleBackColor = true;
+            this.btnIssueReport.UseVisualStyleBackColor = false;
             // 
             // btnIssue
             // 
@@ -179,11 +182,33 @@
             this.btnBooks.UseVisualStyleBackColor = true;
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
+            // lblBorrowedCount
+            // 
+            this.lblBorrowedCount.AutoSize = true;
+            this.lblBorrowedCount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBorrowedCount.ForeColor = System.Drawing.Color.Teal;
+            this.lblBorrowedCount.Location = new System.Drawing.Point(739, 621);
+            this.lblBorrowedCount.Name = "lblBorrowedCount";
+            this.lblBorrowedCount.Size = new System.Drawing.Size(159, 23);
+            this.lblBorrowedCount.TabIndex = 36;
+            this.lblBorrowedCount.Text = "Borrowed Count";
+            // 
+            // txtBorrowedCount
+            // 
+            this.txtBorrowedCount.Enabled = false;
+            this.txtBorrowedCount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBorrowedCount.Location = new System.Drawing.Point(921, 618);
+            this.txtBorrowedCount.Name = "txtBorrowedCount";
+            this.txtBorrowedCount.Size = new System.Drawing.Size(152, 31);
+            this.txtBorrowedCount.TabIndex = 37;
+            // 
             // IssueBookReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 723);
+            this.Controls.Add(this.txtBorrowedCount);
+            this.Controls.Add(this.lblBorrowedCount);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnReturnReport);
             this.Controls.Add(this.btnIssueReport);
@@ -220,5 +245,7 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnBooks;
+        private System.Windows.Forms.Label lblBorrowedCount;
+        private System.Windows.Forms.TextBox txtBorrowedCount;
     }
 }

@@ -331,6 +331,7 @@
             // 
             // btnBooks
             // 
+            this.btnBooks.BackColor = System.Drawing.Color.Teal;
             this.btnBooks.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBooks.Location = new System.Drawing.Point(12, 118);
@@ -338,7 +339,7 @@
             this.btnBooks.Size = new System.Drawing.Size(286, 71);
             this.btnBooks.TabIndex = 22;
             this.btnBooks.Text = "Books";
-            this.btnBooks.UseVisualStyleBackColor = true;
+            this.btnBooks.UseVisualStyleBackColor = false;
             // 
             // btnExit
             // 

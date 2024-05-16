@@ -351,6 +351,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(32, 254);
@@ -358,7 +359,7 @@
             this.button1.Size = new System.Drawing.Size(286, 71);
             this.button1.TabIndex = 63;
             this.button1.Text = "Issue Book";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnReturn
             // 

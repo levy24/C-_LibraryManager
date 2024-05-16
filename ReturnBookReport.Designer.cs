@@ -110,6 +110,7 @@
             // 
             // btnReturnReport
             // 
+            this.btnReturnReport.BackColor = System.Drawing.Color.Teal;
             this.btnReturnReport.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturnReport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnReturnReport.Location = new System.Drawing.Point(12, 535);
@@ -117,7 +118,7 @@
             this.btnReturnReport.Size = new System.Drawing.Size(286, 71);
             this.btnReturnReport.TabIndex = 34;
             this.btnReturnReport.Text = "Return Book Report";
-            this.btnReturnReport.UseVisualStyleBackColor = true;
+            this.btnReturnReport.UseVisualStyleBackColor = false;
             // 
             // btnIssueReport
             // 
@@ -183,6 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1150, 723);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnReturnReport);

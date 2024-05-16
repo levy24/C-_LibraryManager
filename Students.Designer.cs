@@ -307,6 +307,7 @@
             // 
             // btnStudents
             // 
+            this.btnStudents.BackColor = System.Drawing.Color.Teal;
             this.btnStudents.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudents.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnStudents.Location = new System.Drawing.Point(29, 171);
@@ -314,7 +315,7 @@
             this.btnStudents.Size = new System.Drawing.Size(286, 71);
             this.btnStudents.TabIndex = 45;
             this.btnStudents.Text = "Students";
-            this.btnStudents.UseVisualStyleBackColor = true;
+            this.btnStudents.UseVisualStyleBackColor = false;
             // 
             // btnBooks
             // 

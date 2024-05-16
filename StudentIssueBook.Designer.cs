@@ -85,6 +85,7 @@
             // 
             // btnIssue
             // 
+            this.btnIssue.BackColor = System.Drawing.Color.Teal;
             this.btnIssue.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIssue.Location = new System.Drawing.Point(12, 250);
@@ -92,7 +93,7 @@
             this.btnIssue.Size = new System.Drawing.Size(327, 71);
             this.btnIssue.TabIndex = 62;
             this.btnIssue.Text = "Issue Book";
-            this.btnIssue.UseVisualStyleBackColor = true;
+            this.btnIssue.UseVisualStyleBackColor = false;
             // 
             // btnBooks
             // 

@@ -200,6 +200,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(4, 335);
@@ -207,7 +208,7 @@
             this.button1.Size = new System.Drawing.Size(286, 71);
             this.button1.TabIndex = 58;
             this.button1.Text = "Return Book";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnStudents
             // 

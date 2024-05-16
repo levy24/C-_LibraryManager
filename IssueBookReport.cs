@@ -30,6 +30,9 @@ namespace Library_Management
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
+            int borrowedCount = dt.Rows.Count;
+            txtBorrowedCount.Text = borrowedCount.ToString();
             conn.Close();
         }
 
@@ -44,6 +47,9 @@ namespace Library_Management
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
+            int borrowedCount = dt.Rows.Count;
+            txtBorrowedCount.Text = borrowedCount.ToString();
             conn.Close();
         }
 

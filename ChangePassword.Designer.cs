@@ -151,6 +151,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(12, 348);
@@ -158,7 +159,7 @@
             this.button1.Size = new System.Drawing.Size(327, 71);
             this.button1.TabIndex = 67;
             this.button1.Text = "Change Password";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnIssue
             // 
