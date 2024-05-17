@@ -40,6 +40,8 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnBooks = new System.Windows.Forms.Button();
+            this.lblReturnedCount = new System.Windows.Forms.Label();
+            this.txtReturnedCount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,12 +182,34 @@
             this.btnBooks.UseVisualStyleBackColor = true;
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
+            // lblReturnedCount
+            // 
+            this.lblReturnedCount.AutoSize = true;
+            this.lblReturnedCount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReturnedCount.ForeColor = System.Drawing.Color.Teal;
+            this.lblReturnedCount.Location = new System.Drawing.Point(702, 630);
+            this.lblReturnedCount.Name = "lblReturnedCount";
+            this.lblReturnedCount.Size = new System.Drawing.Size(154, 23);
+            this.lblReturnedCount.TabIndex = 36;
+            this.lblReturnedCount.Text = "Returned Count";
+            // 
+            // txtReturnedCount
+            // 
+            this.txtReturnedCount.Enabled = false;
+            this.txtReturnedCount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReturnedCount.Location = new System.Drawing.Point(879, 627);
+            this.txtReturnedCount.Name = "txtReturnedCount";
+            this.txtReturnedCount.Size = new System.Drawing.Size(207, 31);
+            this.txtReturnedCount.TabIndex = 37;
+            // 
             // ReturnBookReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1150, 723);
+            this.Controls.Add(this.txtReturnedCount);
+            this.Controls.Add(this.lblReturnedCount);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnReturnReport);
             this.Controls.Add(this.btnIssueReport);
@@ -222,5 +246,7 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnBooks;
+        private System.Windows.Forms.Label lblReturnedCount;
+        private System.Windows.Forms.TextBox txtReturnedCount;
     }
 }

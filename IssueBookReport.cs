@@ -29,7 +29,15 @@ namespace Library_Management
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            foreach (DataColumn column in dt.Columns.Cast<DataColumn>().ToArray())
+            {
+                if (column.ColumnName == "ReturnDate")
+                {
+                    dt.Columns.Remove(column);
+                }
+            }
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             int borrowedCount = dt.Rows.Count;
             txtBorrowedCount.Text = borrowedCount.ToString();
@@ -46,7 +54,15 @@ namespace Library_Management
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            foreach (DataColumn column in dt.Columns.Cast<DataColumn>().ToArray())
+            {
+                if (column.ColumnName == "ReturnDate")
+                {
+                    dt.Columns.Remove(column);
+                }
+            }
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             int borrowedCount = dt.Rows.Count;
             txtBorrowedCount.Text = borrowedCount.ToString();

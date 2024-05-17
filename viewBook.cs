@@ -30,7 +30,16 @@ namespace Library_Management
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            foreach (DataColumn column in dt.Columns.Cast<DataColumn>().ToArray())
+            {
+                if (column.ColumnName != "BookName" && column.ColumnName != "AuthorName" && column.ColumnName != "Quantity")
+                {
+                    dt.Columns.Remove(column);
+                }
+            }
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
             conn.Close();
         }
 
@@ -43,7 +52,16 @@ namespace Library_Management
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            foreach (DataColumn column in dt.Columns.Cast<DataColumn>().ToArray())
+            {
+                if (column.ColumnName != "BookName" && column.ColumnName != "AuthorName" && column.ColumnName != "Quantity")
+                {
+                    dt.Columns.Remove(column);
+                }
+            }
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
             conn.Close();
         }
 

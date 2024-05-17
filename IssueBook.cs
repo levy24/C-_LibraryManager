@@ -22,13 +22,14 @@ namespace Library_Management
         private void IssueBook_Load(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("getBooks", conn);
+            SqlCommand cmd = new SqlCommand("books_view", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@BookName", SqlDbType.NVarChar).Value = txtSearchBook.Text;
+            cbBookName.Items.Clear();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                cbBookName.Items.Add(reader[0].ToString());
+                cbBookName.Items.Add(reader["BookName"].ToString());
             }
             reader.Close();
             conn.Close();

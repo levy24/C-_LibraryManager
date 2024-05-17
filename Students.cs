@@ -76,6 +76,8 @@ namespace Library_Management
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView2.DataSource = dt;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
             txtID.DataBindings.Clear();
             txtID.DataBindings.Add("Text", dataGridView2.DataSource, "ID");
             txtName.DataBindings.Clear();
@@ -103,6 +105,7 @@ namespace Library_Management
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView2.DataSource = dt;
+                dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             }
             catch (Exception ex)
             {
